@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+html,body{
+    height: 100%;
+    margin: 0px;
+    background: linear-gradient(135deg, rgba(85,114,186,1) 0%, rgba(84,137,187,1) 23%, rgba(85,172,189,1) 49%, rgba(84,204,176,1) 100%);
+    background-repeat: no-repeat;
+    font-family: 'Roboto', sans-serif;
+}
+h1,h2,h3,h4,h5,h6,p{
+    margin: 10px 0px;
+}

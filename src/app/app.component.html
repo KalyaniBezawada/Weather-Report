@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="search">
+    <img src="./assets/searchicon.png">
+    <input type="text" class="search-input" [(ngModel)]="searchkey" (input)="searchcity($event.target.value)" placeholder="Search...">
+  </div>
+  <div class="contentbox">
+    <div class="currentreport-card">
+      <h4>CURRENT WEATHER</h4>
+      <ul>
+        <h3 style="text-align: center;">{{currentReport.name}}</h3>
+        <div>
+          <h3>{{currentReport.weather[0].main}}</h3>
+          <p>{{currentReport.weather[0].description}}</p>
+        </div>
+        <div class="temp">
+          <h1>{{currentReport.main.temp}} K </h1>
+          <span>High : {{currentReport.main.temp_max}} K</span>
+          <span>Low : {{currentReport.main.temp_min}} K</span>
+        </div>
+        <div *ngIf="showContent">
+          <p>Wind Speed : {{currentReport.wind.speed}} m/s</p>
+          <p>Humidity : {{currentReport.main.humidity}} %</p>
+          <p>Pressure : {{currentReport.main.pressure }}</p>
+          <p>Sunrise/Sunset Time : {{currentReport.sys.sunrise | date:'shortTime'}} / {{currentReport.sys.sunset | date:'shortTime'}}</p>
+        </div>
+        <div style="text-align:right">
+          <a (click)="toggleContent()" class="toggle-btn">
+            <span *ngIf="!showContent">More</span>
+            <span *ngIf="showContent">less</span>
+          </a>
+        </div>
+        
+      </ul>
+
+    </div>
+    <div class="graph-card">
+      <canvas id="myChart"></canvas>
+    </div>
+  </div>
+</div>
